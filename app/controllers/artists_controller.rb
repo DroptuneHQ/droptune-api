@@ -2,18 +2,12 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
 
-    render json: @artists
+    render json: @artists, include: [:sources]
   end
 
   def show
     @artist = Artist.find(params[:id])
 
-    render json: @artist
+    render json: @artist, include: [:sources]
   end
-
-  private
-
-    def artist_params
-      params.require(:artist).permit(:name, :slug, :image)
-    end
 end
