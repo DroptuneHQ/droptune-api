@@ -10,15 +10,16 @@ class SourceMusicBrainzJob
     if musicbrainz_artist.present?
       # Source and then set updated_at
       source = Source.find_or_create_by(artist: artist, name: 'musicbrainz', value: musicbrainz_artist.id)
-      source.touch
 
-      if source.updated_at < musicbrainz_days.days.ago
+      if source.updated_at = source.created_at or source.updated_at < musicbrainz_days.days.ago
         urls = musicbrainz_artist.urls
 
         if urls[:youtube].present?
           external_youtube = Array.wrap(urls[:youtube]).first
 
           Source.find_or_create_by(artist: artist, name: 'youtube', value: external_youtube)
+
+          BuildYoutubeJob.perform_async(artist.id)
         end
 
         if urls[:social_network].present?
@@ -42,6 +43,8 @@ class SourceMusicBrainzJob
             facebook_handle = external_facebook.match(/((https?:\/\/)?(www\.)?facebook\.com\/)?(@|#!\/)?([A-Za-z0-9_]{1,15})(\/([-a-z]{1,20}))?/)[5]
             Source.find_or_create_by(artist: artist, name: 'facebook', value: facebook_handle)
           end
+
+          source.touch
         end
       end
     end
