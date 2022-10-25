@@ -7,5 +7,8 @@ class AddArtistJob
 
     # Spotify
     SourceSpotifyJob.perform_async(artist.id)
+
+    # MusicBrainz
+    SourceMusicBrainzJob.perform_async(artist.id)
   end
 end
