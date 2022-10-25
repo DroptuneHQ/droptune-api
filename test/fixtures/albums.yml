@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artist: one
+  name: MyString
+  release_date: 2022-10-25
+  album_type: MyString
+  spotify_id: MyText
+  spotify_image: MyText
+  spotify_link: MyText
+  applemusic_id: 
+  applemusic_image: MyText
+  applemusic_link: MyText
+
+two:
+  artist: two
+  name: MyString
+  release_date: 2022-10-25
+  album_type: MyString
+  spotify_id: MyText
+  spotify_image: MyText
+  spotify_link: MyText
+  applemusic_id: 
+  applemusic_image: MyText
+  applemusic_link: MyText
