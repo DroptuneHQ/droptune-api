@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/yhirano55/apple_music.git
+  revision: d3b21f8e415d4d5663cc8fd145725694820919f0
+  specs:
+    apple_music (0.3.1)
+      faraday
+      faraday_middleware
+      jwt (>= 2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -85,10 +94,31 @@ GEM
     erubi (1.11.0)
     et-orbi (1.2.7)
       tzinfo
-    faraday (2.6.0)
-      faraday-net_http (>= 2.0, < 3.1)
+    faraday (1.10.2)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0)
+      faraday-multipart (~> 1.0)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.0)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
+      faraday-retry (~> 1.0)
       ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.1)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
+    faraday-retry (1.0.3)
+    faraday_middleware (1.2.0)
+      faraday (~> 1.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
     foreman (0.87.2)
@@ -126,6 +156,7 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     multi_xml (0.6.0)
+    multipart-post (2.2.3)
     musicbrainz (0.7.7)
       faraday
       nokogiri
@@ -243,6 +274,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  apple_music!
   bootsnap
   debug
   figaro

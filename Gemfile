@@ -29,6 +29,7 @@ gem "sidekiq-failures"
 gem "rspotify"
 gem "musicbrainz"
 gem "yt"
+gem "apple_music", git: "https://github.com/yhirano55/apple_music.git"
 
 # Miscellaneous
 gem "figaro" # environment variables

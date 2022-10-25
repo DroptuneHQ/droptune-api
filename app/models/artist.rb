@@ -12,4 +12,8 @@ class Artist < ApplicationRecord
   def youtube
     sources.where('sources.name = ?', 'youtube').first
   end
+
+  def apple_music
+    sources.where('sources.name = ?', 'apple_music').first
+  end
 end
