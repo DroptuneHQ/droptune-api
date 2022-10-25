@@ -1,0 +1,2 @@
+class MusicVideosController < ApplicationController
+end

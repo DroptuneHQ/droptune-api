@@ -3,6 +3,7 @@ require 'sidekiq/cron/web'
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :music_videos
   resources :albums
   mount Sidekiq::Web => '/sidekiq'
 

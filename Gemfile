@@ -25,12 +25,14 @@ gem "sidekiq-cron"
 gem "sidekiq-unique-jobs"
 gem "sidekiq-failures"
 
-# Music Services
+# Data Services
 gem "rspotify"
 gem "musicbrainz"
+gem "yt"
 
 # Miscellaneous
 gem "figaro" # environment variables
+gem "httparty"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

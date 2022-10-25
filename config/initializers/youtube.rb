@@ -1,0 +1,1 @@
+Yt.configuration.api_key = ENV['youtube_key']
