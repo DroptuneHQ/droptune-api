@@ -21,7 +21,6 @@ gem "redis", "~> 4.0"
 
 # Background Processing
 gem "sidekiq"
-gem "sidekiq-throttled"
 gem "sidekiq-cron"
 gem "sidekiq-unique-jobs"
 gem "sidekiq-failures"
@@ -39,6 +38,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "foreman", require: false
 end
 
 group :development do
