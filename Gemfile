@@ -34,6 +34,7 @@ gem "apple_music", git: "https://github.com/yhirano55/apple_music.git"
 # Miscellaneous
 gem "figaro" # environment variables
 gem "httparty"
+gem "typhoeus"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

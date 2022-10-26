@@ -27,7 +27,10 @@ class SourceMusicBrainzJob
           external_twitter = Array.wrap(urls[:social_network]).select{|key| key.include?("twitter")}&.first
           if external_twitter.present?
             twitter_handle = external_twitter.match(/((https?:\/\/)?(www\.)?twitter\.com\/)?(@|#!\/)?([A-Za-z0-9_]{1,15})(\/([-a-z]{1,20}))?/)[5]
+            
             Source.find_or_create_by(artist: artist, name: 'twitter', value: twitter_handle)
+            
+            SourceTwitterJob.perform_async(artist.id)
           end
 
           # Instagram

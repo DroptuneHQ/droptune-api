@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_164122) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_26_003919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,7 +58,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_164122) do
     t.index ["artist_id"], name: "index_sources_on_artist_id"
   end
 
+  create_table "tweets", force: :cascade do |t|
+    t.bigint "artist_id", null: false
+    t.bigint "twitter_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_tweets_on_artist_id"
+  end
+
   add_foreign_key "albums", "artists"
   add_foreign_key "music_videos", "artists"
   add_foreign_key "sources", "artists"
+  add_foreign_key "tweets", "artists"
 end
