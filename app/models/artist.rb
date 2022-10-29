@@ -2,6 +2,8 @@ class Artist < ApplicationRecord
   has_many :sources
   has_many :albums
   has_many :music_videos
+  has_many :events
+  has_many :tweets
 
   validates :name, presence: true
 
