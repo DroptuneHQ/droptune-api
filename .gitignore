@@ -32,3 +32,4 @@
 /config/application.yml
 
 apple_authkey.p8
+.DS_Store
